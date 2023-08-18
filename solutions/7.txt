@@ -1,0 +1,17 @@
+00      5A        GAS           2gas  │
+01      34        CALLVALUE     2gas  │
+02      5B        JUMPDEST      1gas  ┢━<━┓
+03      6001      PUSH1 01      3gas  ┃   ┃
+05      90        SWAP1         3gas  ┃   ┃
+06      03        SUB           3gas  ┃   ┃
+07      80        DUP1          3gas  ┃   ┃
+08      6000      PUSH1 00      3gas  ┃   ┃
+0A      14        EQ            3gas  ┃   ┃
+0B      6011      PUSH1 11      3gas  ┃   ┃
+0D      57        JUMPI        10gas  ┠──────┐
+0E      6002      PUSH1 02      3gas  ┃   ┃  │
+10      56        JUMP          8gas  ┗━>━┛  │
+11      5B        JUMPDEST      1gas  <──────┘
+
+
+5 + 43*(CALLVALUE-1) + 32 = 166,

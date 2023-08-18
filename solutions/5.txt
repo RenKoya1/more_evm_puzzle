@@ -1,0 +1,9 @@
+MSIZE returns "the size of active memory in bytes". But there's an important detail: "The size is always a multiple of a word (32 bytes)". So even if we only sent 33 bytes as calldata which were copied to memory, MSIZE would instead return 64 as value.
+
+
+0F      36        CALLDATASIZE　61
+10      59        MSIZE　64
+11      03        SUB
+
+
+61bytes data

@@ -1,0 +1,19 @@
+
+return 10
+00      600A      PUSH1 0A        [0x0A]
+02      6000      PUSH1 00        [0x00, 0x0A] (offset, size)
+04      F3        RETURN          []
+
+-> 0x600A6000F3
+
+constructor
+00      64600A6000F3      PUSH5 600A6000F3        [0x600A6000F3]
+06      6000              PUSH1 00                [0x0, 0x600A6000F3] (offset, value)
+08      52                MSTORE                  []
+00      600A              PUSH1 0A                [0x0A]
+02      601B              PUSH1 1B                [0x1B, 0x0A] (offset, size)
+04      F3                RETURN                  []
+
+->0x64600A6000F3600052600A601BF3
+
+offset = 1B because memory have 0x000000000000000000000000000000000000000000000000000000600A6000F3 and we should skip 27 bytes

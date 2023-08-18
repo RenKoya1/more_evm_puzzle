@@ -1,0 +1,16 @@
+00      60AA      PUSH1 AA        [0xAA]
+02      6005      PUSH1 05        [0x05, 0x0A] (key, value)
+04      55        SSTORE          []
+
+-> 0x60AA600555
+
+constructor
+00      6460AA600555      PUSH5 60AA600555        [0x60AA600555]
+06      6000              PUSH1 00                [0x0, 0x60AA600555] (offset, value)
+08      52                MSTORE                  []
+00      600A              PUSH1 0A                [0x0A]
+02      601B              PUSH1 1B                [0x1B, 0x0A] (offset, size)
+04      F3                RETURN                  []
+
+->0x6460AA600555600052600A601BF3
+

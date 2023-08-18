@@ -1,0 +1,25 @@
+first self balance is equal to last selfbalance 
+1. use selfdestruct to return value
+
+
+PUSH1 0x33 // opcode for CALLER
+PUSH1 0x20
+MSTORE8　　//store 8bit  = 1byte 
+
+PUSH1 0xFF // opcode for SELFDESTRUCT
+PUSH1 0x00
+MSTORE8 //store 8bit  = 1byte
+PUSH1 0x40
+PUSH1 0x00
+return // return 0xFF..0..40..0.. 64bytes
+
+//constructor 
+PUSH15 0x603360205360ff60005360406000f3 // runtime code
+PUSH1 0x00
+MSTORE
+
+PUSH1 0x0F
+PUSH1 0x11
+RETURN
+
+2. 

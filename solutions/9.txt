@@ -1,0 +1,3 @@
+hash number that is shifted F8 = 248 bit right is equal to 0xA8
+
+./sha3.js search the answer

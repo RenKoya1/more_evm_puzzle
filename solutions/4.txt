@@ -1,0 +1,20 @@
+
+
+
+value = 2
+
+deploy with 1wei
+
+0C      6000      PUSH1 00        [0x0]
+0E      80        DUP1            [0x0, 0x0]
+0E      80        DUP1            [0x0, 0x0, 0x0]
+0F      80        DUP1            [0x0, 0x0, 0x0, 0x0]
+0C      6002      PUSH1 02        [1, 0x0, 0x0, 0x0, 0x0]
+11      81        DUP2            [0x0, 1, 0x0, 0x0, 0x0, 0x0]
+13      5A        GAS             [GAS, 0x0, 1, 0x0, 0x0, 0x0, 0x0] (gas, address, value, argsOffset, argsSize, retOffset, retSize)
+00      F1        CALL            []
+07      6000      PUSH1 00        [0x0]
+09      80        DUP1            [0x0, 0x0] (offset, size)
+0B      F3        RETURN          []
+
+-> 0x60008080806001815AF1600080F3
